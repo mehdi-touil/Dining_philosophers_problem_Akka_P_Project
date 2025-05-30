@@ -1,0 +1,83 @@
+[
+  {
+    "type": "CreateMonitor",
+    "details": {
+      "log": "Monitor was created.",
+      "payload": "null",
+      "monitor": "Monitor",
+      "clock": {
+        "Monitor": 1
+      }
+    }
+  },
+  {
+    "type": "MonitorStateTransition",
+    "details": {
+      "log": "Monitor enters state \u0027Init\u0027.",
+      "state": "Init",
+      "payload": "null",
+      "isEntry": true,
+      "monitor": "Monitor",
+      "clock": {
+        "Monitor": 2
+      }
+    }
+  },
+  {
+    "type": "StateTransition",
+    "details": {
+      "log": "Setup_DeadlockFree(2) enters state \u0027Init\u0027.",
+      "id": "Setup_DeadlockFree(2)",
+      "state": "Init",
+      "payload": "null",
+      "isEntry": true,
+      "clock": {
+        "Setup_DeadlockFree(2)": 1
+      }
+    }
+  },
+  {
+    "type": "CreateStateMachine",
+    "details": {
+      "log": "Fork(3) was created by Setup_DeadlockFree(2).",
+      "id": "Fork(3)",
+      "creatorName": "Setup_DeadlockFree(2)",
+      "creatorType": "Setup_DeadlockFree",
+      "payload": "null",
+      "clock": {
+        "Fork(3)": 1
+      }
+    }
+  },
+  {
+    "type": "ExceptionThrown",
+    "details": {
+      "log": "Setup_DeadlockFree(2) running action \u0027Anon_18\u0027 in state \u0027Init\u0027 threw exception \u0027ArgumentOutOfRangeException\u0027.",
+      "id": "Setup_DeadlockFree(2)",
+      "state": "Init",
+      "payload": "null",
+      "action": "Anon_18",
+      "exception": "ArgumentOutOfRangeException",
+      "clock": {
+        "Setup_DeadlockFree(2)": 2
+      }
+    }
+  },
+  {
+    "type": "AssertionFailure",
+    "details": {
+      "log": "Exception \u0027System.ArgumentOutOfRangeException\u0027 was thrown in Setup_DeadlockFree(2) (state \u0027Init\u0027, action \u0027Anon_18\u0027): Index was out of range. Must be non-negative and less than the size of the collection. (Parameter \u0027index\u0027)\nfrom location \u0027System.Private.CoreLib\u0027:\nThe stack trace is:\n   at System.Collections.Generic.List\u00601.set_Item(Int32 index, T value)\r\n   at Plang.CSharpRuntime.Values.PrtSeq.set_Item(Int32 index, IPrtValue value) in /home/runner/work/P/P/Src/PRuntimes/PCSharpRuntime/Values/PrtSeq.cs:line 84\r\n   at PImplementation.Setup_DeadlockFree.Anon_18(Event currentMachine_dequeuedEvent) in C:\\Users\\HP\\Desktop\\Predoc\\Project\\P-part\\PGenerated\\CSharp\\DiningPhilosophers.cs:line 710\r\n   at PChecker.Actors.Actor.InvokeActionAsync(CachedDelegate cachedAction, Event e) in /home/runner/work/P/P/Src/PChecker/CheckerCore/Actors/Actor.cs:line 519",
+      "error": "Exception \u0027System.ArgumentOutOfRangeException\u0027 was thrown in Setup_DeadlockFree(2) (state \u0027Init\u0027, action \u0027Anon_18\u0027): Index was out of range. Must be non-negative and less than the size of the collection. (Parameter \u0027index\u0027)\nfrom location \u0027System.Private.CoreLib\u0027:\nThe stack trace is:\n   at System.Collections.Generic.List\u00601.set_Item(Int32 index, T value)\r\n   at Plang.CSharpRuntime.Values.PrtSeq.set_Item(Int32 index, IPrtValue value) in /home/runner/work/P/P/Src/PRuntimes/PCSharpRuntime/Values/PrtSeq.cs:line 84\r\n   at PImplementation.Setup_DeadlockFree.Anon_18(Event currentMachine_dequeuedEvent) in C:\\Users\\HP\\Desktop\\Predoc\\Project\\P-part\\PGenerated\\CSharp\\DiningPhilosophers.cs:line 710\r\n   at PChecker.Actors.Actor.InvokeActionAsync(CachedDelegate cachedAction, Event e) in /home/runner/work/P/P/Src/PChecker/CheckerCore/Actors/Actor.cs:line 519",
+      "payload": "null"
+    }
+  },
+  {
+    "type": "StrategyDescription",
+    "details": {
+      "log": "Found bug using \u0027random\u0027 strategy.",
+      "payload": "null",
+      "strategy": "random",
+      "strategyDescription": "random[seed \u0027195426322\u0027]"
+    }
+  }
+]

@@ -1,0 +1,46 @@
+﻿<DirectedGraph xmlns='http://schemas.microsoft.com/vs/2009/dgml'>
+  <Nodes>
+    <Node Id='PImplementation.Fork' Category='StateMachine'/>
+    <Node Id='PImplementation.Monitor' Label='PImplementation.Monitor' Category='Monitor'/>
+    <Node Id='PImplementation.Setup_DeadlockFree' Category='StateMachine' Group='Expanded'/>
+    <Node Id='PImplementation.Setup_DeadlockFree.Init' Label='Init'/>
+    <Node Id='PImplementation.Setup_DeadlockFree.__InitState__' Label='__InitState__'/>
+    <Node Id='Plang.CSharpRuntime._GodMachine' Category='StateMachine' Group='Expanded'/>
+    <Node Id='Plang.CSharpRuntime._GodMachine.Init' Label='Init'/>
+  </Nodes>
+  <Links>
+    <Link Source='PImplementation.Setup_DeadlockFree' Target='PImplementation.Setup_DeadlockFree.Init' Category='Contains'/>
+    <Link Source='PImplementation.Setup_DeadlockFree' Target='PImplementation.Setup_DeadlockFree.__InitState__' Category='Contains'/>
+    <Link Source='PImplementation.Setup_DeadlockFree.__InitState__' Target='PImplementation.Setup_DeadlockFree.Init' Label='ConstructorEvent' Index='0' EventId='PImplementation.Setup_DeadlockFree+ConstructorEvent'/>
+    <Link Source='Plang.CSharpRuntime._GodMachine' Target='Plang.CSharpRuntime._GodMachine.Init' Category='Contains'/>
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Error" ValueLabel="True">
+      <Condition Expression="HasCategory('Error')" />
+      <Setter Property="Background" Value="#FFC15656" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Actor" ValueLabel="True">
+      <Condition Expression="HasCategory('Actor')" />
+      <Setter Property="Background" Value="#FF57AC56" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Monitor" ValueLabel="True">
+      <Condition Expression="HasCategory('Monitor')" />
+      <Setter Property="Background" Value="#FF558FDA" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="halt" ValueLabel="True">
+      <Condition Expression="HasCategory('halt')" />
+      <Setter Property="Stroke" Value="#FFFF6C6C" />
+      <Setter Property="StrokeDashArray" Value="4 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="push" ValueLabel="True">
+      <Condition Expression="HasCategory('push')" />
+      <Setter Property="Stroke" Value="#FF7380F5" />
+      <Setter Property="StrokeDashArray" Value="4 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="pop" ValueLabel="True">
+      <Condition Expression="HasCategory('pop')" />
+      <Setter Property="Stroke" Value="#FF7380F5" />
+      <Setter Property="StrokeDashArray" Value="4 2" />
+    </Style>
+  </Styles>
+</DirectedGraph>

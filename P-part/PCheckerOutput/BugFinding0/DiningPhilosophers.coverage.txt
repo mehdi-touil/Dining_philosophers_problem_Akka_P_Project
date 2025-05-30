@@ -1,0 +1,43 @@
+Total event coverage: 12.5%
+===========================
+StateMachine: Fork
+==================
+Event coverage: 0.0%
+
+	State: __InitState__ is uncovered
+		Events not covered: Fork+ConstructorEvent
+
+	State: Available is uncovered
+		Events not covered: eRequestFork
+
+	State: Taken is uncovered
+		Events not covered: eReleaseFork
+
+Monitor: Monitor
+================
+Event coverage: 0.0%
+
+	State: Init is uncovered
+		Events not covered: eGrantFork, eReleaseFork, eStartEating, eStopEating
+
+StateMachine: Setup_Deadlock
+============================
+Event coverage: 100.0%
+
+	State: __InitState__
+		State event coverage: 100.0%
+		Events received: Setup_Deadlock+ConstructorEvent
+		Events sent: Setup_Deadlock+ConstructorEvent
+		Next states: Init
+
+	State: Init
+		State has no expected events, so coverage is 100%
+		Previous states: __InitState__
+
+StateMachine: _GodMachine
+=========================
+Event coverage: 100.0%
+
+	State: Init
+		State has no expected events, so coverage is 100%
+
